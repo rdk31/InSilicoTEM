@@ -45,6 +45,7 @@ pix = 512;             % Number of pixels
 pixsize = 0.5;          % Pixel size [A]
 mindist = 50/pixsize;   % Minimum distance between particles divided by pixsize, 
                             % Depends on type of protein (apo ferrtin ~150)
+tiltmax = [45]/180*pi;  % taken from TemSim_combineparticles.m
 dir1 =  './Micrographs'; % Select folder where to save micrographs
 
 
@@ -86,7 +87,7 @@ for micro = 1:mg
                     % Randomize particles positions for each micrograph
                     disp('Generating random particle positions...')
                     tic
-                    circles = Randomposition(pix, mindist);
+                    circles = Randomposition(pix, mindist, tiltmax);
                     particles = length(circles);
                     toc
                     

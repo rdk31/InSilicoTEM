@@ -1,4 +1,4 @@
-function [circData, circHandles] = Randomposition(N, mindist)
+function [circData, circHandles] = Randomposition(N, mindist, tiltmax)
 % Create a figure 2D circles (or 'bubbles') with random centers and varying radii.
 % Paramters are set and explained at the top of the code.
 % Ouputs include
